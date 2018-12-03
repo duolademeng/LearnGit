@@ -1,0 +1,17 @@
+git add *
+
+git commit -m ‘add file’
+
+打印一些branch的sha1码 用于版本回滚之类的操作
+git log/git reflog/git log --pretty=oneline 
+
+版本回滚
+git reset --hard 121342343/git reset --hard HEAD^
+
+把f1.txt的修改放弃 gitcheck -- 相当于把当前工作区的文件恢复到仓库对应文件或者已经提交到暂存区的文件
+git checkout -- f1.txt 
+
+放弃暂存区某个文件的提交
+git reset HEAD f1.txt
+再使用git checkout -- f1.txt可以恢复发f1.txt
+也可以使用 git reset --hard 1213213强制当前版本回滚 可是这样就不仅仅是当前文件回滚了 而是整个回滚
