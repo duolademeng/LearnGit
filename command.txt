@@ -1,3 +1,4 @@
+本地仓库：
 git add *
 
 git commit -m ‘add file’
@@ -15,3 +16,15 @@ git checkout -- f1.txt
 git reset HEAD f1.txt
 再使用git checkout -- f1.txt可以恢复发f1.txt
 也可以使用 git reset --hard 1213213强制当前版本回滚 可是这样就不仅仅是当前文件回滚了 而是整个回滚
+
+远程仓库：
+******先有本地库 后有远程库******
+1、在github注册账号 查看本地公钥和私钥
+2、在github上把自己的公钥添加进去，方便以后的推送
+3、在github上创建新的仓库，然后在你想要使用的本地仓库界面用git命令
+	git remote add origin git@server-name:path/repo-name.git
+	命令 直接在github上关联你的本地仓库有
+4、关联后，使用命令git push -u origin master第一次推送master分支的所有内容
+5、此后，每次本地提交后，只要有必要，就可以使用命令git push origin master 推送最新修改
+
+******先有远程库 后有本地库******
